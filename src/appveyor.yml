@@ -15,11 +15,22 @@ notifications:
 - provider: Email
   to:
   - tamas.wagner@gmail.com
-  subject: vsgerrit build
+  subject: 'vsgerrit build: success'
   message: >-
     Hey man, someone built vsgerrit, huzzah!
 
     Check out what happened at: https://ci.appveyor.com/project/wagner89/vsgerrit
   on_build_success: true
+  on_build_failure: false
+  on_build_status_changed: false
+- provider: Email
+  to:
+  - tamas.wagner@gmail.com
+  subject: 'vsgerrit build: faliure'
+  message: >-
+    Hey man, someone tried to build vsgerrit, but it failed :(
+
+    Check out what happened at: https://ci.appveyor.com/project/wagner89/vsgerrit
+  on_build_success: false
   on_build_failure: true
-  on_build_status_changed: true
+  on_build_status_changed: false

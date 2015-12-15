@@ -3,7 +3,9 @@
   <Metadata>
     <Identity Id="vsgerrit.Wagner Tamás.87699b94-cd22-4956-9220-10aef9239e92" Version="1.0" Language="en-US" Publisher="Wagner Tamás" />
     <DisplayName>vsgerrit</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <Description xml:space="preserve">vsgerrit is Visual Studio extension, which allows you to quickly grab changes from gerrit, view the changes and comments inline, reply to comments, submit ratings, fix issues and commit them back, all from the warmth and comfort of your favorite IDE.</Description>
+    <MoreInfo>https://github.com/vsgerrit/vsgerrit</MoreInfo>
+    <License>license.txt</License>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />

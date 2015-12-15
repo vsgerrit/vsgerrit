@@ -1,0 +1,25 @@
+version: 1.0.{build}
+skip_tags: true
+configuration: Release
+platform: Any CPU
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+build:
+  parallel: true
+  verbosity: detailed
+notifications:
+- provider: Email
+  to:
+  - tamas.wagner@gmail.com
+  subject: vsgerrit build
+  message: >-
+    Hey man, someone built vsgerrit, huzzah!
+
+    Check out what happened at: https://ci.appveyor.com/project/wagner89/vsgerrit
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true

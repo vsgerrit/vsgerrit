@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vsgerrit", "vsgerrit\vsgerrit.csproj", "{D28DA13C-C611-4A9A-A7D4-077DB8D8449C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSGerrit", "vsgerrit\VSGerrit.csproj", "{D28DA13C-C611-4A9A-A7D4-077DB8D8449C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vsgerrit.tests", "vsgerrit.tests\vsgerrit.tests.csproj", "{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSGerrit.Tests", "vsgerrit.tests\VSGerrit.Tests.csproj", "{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

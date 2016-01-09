@@ -1,16 +1,22 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="vsgerrit.Wagner Tamás.87699b94-cd22-4956-9220-10aef9239e92" Version="1.0" Language="en-US" Publisher="Wagner Tamás" />
+    <Identity Id="87699b94-cd22-4956-9220-10aef9239e92" Version="1.0" Language="en-US" Publisher="Wagner Tamás, Costin Zaharia" />
     <DisplayName>vsgerrit</DisplayName>
     <Description xml:space="preserve">vsgerrit is Visual Studio extension, which allows you to quickly grab changes from gerrit, view the changes and comments inline, reply to comments, submit ratings, fix issues and commit them back, all from the warmth and comfort of your favorite IDE.</Description>
     <MoreInfo>https://github.com/vsgerrit/vsgerrit</MoreInfo>
     <License>license.txt</License>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+    <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Pro" />
+    <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Enterprise" />
+    <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Community" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
   </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
 </PackageManifest>

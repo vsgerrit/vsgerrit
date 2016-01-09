@@ -1,0 +1,42 @@
+version: 1.0.{build}
+skip_tags: true
+configuration: Release
+platform: Any CPU
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+before_build:
+  - appveyor DownloadFile https://dist.nuget.org/win-x86-commandline/v3.2.0-rc/nuget.exe
+  - appveyor DownloadFile https://raw.githubusercontent.com/appveyor/ci/master/scripts/nuget-restore.cmd
+  - nuget-restore src\vsgerrit.sln
+build:
+  parallel: true
+  verbosity: detailed
+notifications:
+- provider: Email
+  to:
+  - tamas.wagner@gmail.com
+  - cgzaharia@gmail.com
+  subject: 'vsgerrit build: success'
+  message: >-
+    Hey man, someone built vsgerrit, huzzah!
+
+    Check out what happened at: https://ci.appveyor.com/project/wagner89/vsgerrit
+  on_build_success: true
+  on_build_failure: false
+  on_build_status_changed: false
+- provider: Email
+  to:
+  - tamas.wagner@gmail.com
+  - cgzaharia@gmail.com
+  subject: 'vsgerrit build: faliure'
+  message: >-
+    Hey man, someone tried to build vsgerrit, but it failed :(
+
+    Check out what happened at: https://ci.appveyor.com/project/wagner89/vsgerrit
+  on_build_success: false
+  on_build_failure: true
+  on_build_status_changed: false

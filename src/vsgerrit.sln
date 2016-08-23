@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSGerrit", "vsgerrit\VSGerrit.csproj", "{D28DA13C-C611-4A9A-A7D4-077DB8D8449C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSGerrit.Tests", "vsgerrit.tests\VSGerrit.Tests.csproj", "{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSGerrit.Playground", "VSGerrit.Playground\VSGerrit.Playground.csproj", "{1E47EEA9-125F-424D-AB59-A180960DB789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2F1C085-751E-4DEF-9E9D-3153605D8E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E47EEA9-125F-424D-AB59-A180960DB789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E47EEA9-125F-424D-AB59-A180960DB789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E47EEA9-125F-424D-AB59-A180960DB789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E47EEA9-125F-424D-AB59-A180960DB789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

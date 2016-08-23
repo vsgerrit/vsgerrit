@@ -52,6 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Properties\CommonInfo.cs" />
     <Compile Include="Features\ChangeBrowser\ChangeBrowserWindow.cs" />
     <Compile Include="Features\ChangeBrowser\ChangeBrowserCommand.cs" />
     <Compile Include="Features\ChangeBrowser\ChangeBrowserControl.xaml.cs">

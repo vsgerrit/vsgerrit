@@ -4,15 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:vsgerrit.Features.ChangeBrowser.Resources"
+             xmlns:changeBrowser="clr-namespace:vsgerrit.Features.ChangeBrowser"
+             xmlns:actionsBar="clr-namespace:vsgerrit.Features.ChangeBrowser.Controls.ActionsBar"
              mc:Ignorable="d"
-             d:DesignHeight="300" 
-             d:DesignWidth="300"
-             Name="ChangeBrowserWindow">
+             xmlns:mvvm="http://prismlibrary.com/"
+             xmlns:converters="clr-namespace:vsgerrit.Common.Converters"
+             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="800"
+             d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance changeBrowser:ChangeBrowserControlViewModel}"
+             Name="ChangeBrowser">
+
+    <UserControl.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="10"
                        HorizontalAlignment="Center"
-                       Text="{x:Static local:ChangeBrowserStrings.Title}"/>
+                       Text="{x:Static local:ChangeBrowserStrings.Title}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Visibility="{Binding IsSettingsVisible, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+            <actionsBar:ActionsBar DataContext="{Binding ActionsBarViewModel}" />
         </StackPanel>
     </Grid>
 </UserControl>

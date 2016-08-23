@@ -1,6 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using Microsoft.VisualStudio.Shell;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using Microsoft.VisualStudio.Shell;
+using vsgerrit.Features.Configuration;
 
 namespace vsgerrit.Features.ChangeBrowser
 {
@@ -16,6 +17,8 @@ namespace vsgerrit.Features.ChangeBrowser
 
         protected override void Initialize()
         {
+            new Bootstrapper().Run();
+
             ChangeBrowserCommand.Initialize(this);
             base.Initialize();
         }

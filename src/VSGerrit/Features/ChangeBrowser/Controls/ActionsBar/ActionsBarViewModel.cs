@@ -23,7 +23,7 @@ namespace vsgerrit.Features.ChangeBrowser.Controls.ActionsBar
 
         private void HandleNavigateToSettingsCommand()
         {
-            _navigationService.NavigateToSettings();
+            _navigationService.ToggleSettingsVisibility();
         }
     }
 }

@@ -7,6 +7,8 @@ namespace vsgerrit.Features.Configuration
     {
         protected override void ConfigureAggregateCatalog()
         {
+            base.ConfigureAggregateCatalog();
+
             AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Bootstrapper).Assembly));
         }
     }

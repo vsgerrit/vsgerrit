@@ -2,6 +2,6 @@
 {
     public interface IChangeBrowserNavigationService
     {
-        void NavigateToSettings();
+        void ToggleSettingsVisibility();
     }
 }

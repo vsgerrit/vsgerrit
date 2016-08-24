@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Runtime.CompilerServices;
 using vsgerrit.Features.ChangeBrowser.Controls.ActionsBar;
+using vsgerrit.Features.ChangeBrowser.Controls.Settings;
 using vsgerrit.Features.ChangeBrowser.Services;
 
 namespace vsgerrit.Features.ChangeBrowser
@@ -26,14 +27,23 @@ namespace vsgerrit.Features.ChangeBrowser
 
         public ActionsBarViewModel ActionsBarViewModel { get; }
 
+        public SettingsViewModel SettingsViewModel { get; }
+
         public ChangeBrowserControlViewModel()
         {
-            ActionsBarViewModel = new ActionsBarViewModel(this);
+            // used for design time
         }
 
-        public void NavigateToSettings()
+        [ImportingConstructor]
+        public ChangeBrowserControlViewModel(IApplicationSettingsRepository applicationSettingsRepository)
         {
-            IsSettingsVisible = true;
+            ActionsBarViewModel = new ActionsBarViewModel(this);
+            SettingsViewModel = new SettingsViewModel(applicationSettingsRepository);
+        }
+
+        public void ToggleSettingsVisibility()
+        {
+            IsSettingsVisible = !IsSettingsVisible;
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

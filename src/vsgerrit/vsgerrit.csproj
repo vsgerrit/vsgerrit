@@ -58,6 +58,17 @@
       <DependentUpon>ActionsBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Features\ChangeBrowser\Controls\ActionsBar\ActionsBarViewModel.cs" />
+    <Compile Include="Features\ChangeBrowser\Controls\Settings\Resources\SettingsViewLocalization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsViewLocalization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ChangeBrowser\Controls\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ChangeBrowser\Controls\Settings\SettingsViewModel.cs" />
+    <Compile Include="Features\ChangeBrowser\Services\ApplicationSettingsRepository.cs" />
+    <Compile Include="Features\ChangeBrowser\Services\IApplicationSettingsRepository.cs" />
     <Compile Include="Features\ChangeBrowser\Services\IChangeBrowserNavigationService.cs" />
     <Compile Include="Features\Configuration\Bootstrapper.cs" />
     <Compile Include="Properties\CommonInfo.cs" />
@@ -246,8 +257,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Features\ChangeBrowser\Controls\Settings\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\ChangeBrowser\Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Features\ChangeBrowser\Controls\Settings\Resources\SettingsViewLocalization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettingsViewLocalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Features\ChangeBrowser\Resources\ChangeBrowserStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ChangeBrowserStrings.Designer.cs</LastGenOutput>

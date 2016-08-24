@@ -9,6 +9,7 @@
              mc:Ignorable="d"
              xmlns:mvvm="http://prismlibrary.com/"
              xmlns:converters="clr-namespace:vsgerrit.Common.Converters"
+             xmlns:settings="clr-namespace:vsgerrit.Features.ChangeBrowser.Controls.Settings"
              mvvm:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="800"
              d:DesignWidth="800"
@@ -16,11 +17,18 @@
              Name="ChangeBrowser">
 
     <UserControl.Resources>
-        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
@@ -32,9 +40,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1"
-                    VerticalAlignment="Top"
-                    Visibility="{Binding IsSettingsVisible, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+                    VerticalAlignment="Top">
             <actionsBar:ActionsBar DataContext="{Binding ActionsBarViewModel}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Visibility="{Binding IsSettingsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <settings:SettingsView DataContext="{Binding SettingsViewModel}" />
         </StackPanel>
     </Grid>
 </UserControl>
